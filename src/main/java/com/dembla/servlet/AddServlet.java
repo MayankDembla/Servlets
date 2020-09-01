@@ -32,6 +32,7 @@ public class AddServlet extends HttpServlet {
 //        session.setAttribute("Key", k );
 
         Cookie cookie = new Cookie("k", k + "" ) ;
+        res.addCookie(cookie);
 
         // Lets use the Another concept of Redirecting
         res.sendRedirect("sq" ); // URL Rewriting

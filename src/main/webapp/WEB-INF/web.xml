@@ -27,4 +27,30 @@
     <url-pattern>/sq</url-pattern>
   </servlet-mapping>
 
+  <servlet>
+    <servlet-name>xyz</servlet-name>
+    <servlet-class>com.dembla.servlet.ContextParamUse</servlet-class>
+
+    <init-param>
+      <param-name>name</param-name>
+      <param-value>MayankDembla</param-value>
+    </init-param>
+
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>xyz</servlet-name>
+    <url-pattern>/ctx</url-pattern>
+  </servlet-mapping>
+
+  <context-param>
+    <param-name>firstname</param-name>
+    <param-value>Mayank</param-value>
+  </context-param>
+
+  <context-param>
+    <param-name>lastname</param-name>
+    <param-value>Dembla</param-value>
+  </context-param>
+
 </web-app>
