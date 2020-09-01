@@ -5,44 +5,6 @@
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
 
-  <servlet>
-    <servlet-name>abc</servlet-name>
-    <servlet-class>com.dembla.servlet.AddServlet</servlet-class>
-    <load-on-startup>2</load-on-startup>
-  </servlet>
-
-  <servlet-mapping>
-    <servlet-name>abc</servlet-name>
-    <url-pattern>/add</url-pattern>
-  </servlet-mapping>
-
-  <servlet>
-    <servlet-name>pqr</servlet-name>
-    <servlet-class>com.dembla.servlet.SquareServlet</servlet-class>
-    <load-on-startup>2</load-on-startup>
-  </servlet>
-
-  <servlet-mapping>
-    <servlet-name>pqr</servlet-name>
-    <url-pattern>/sq</url-pattern>
-  </servlet-mapping>
-
-  <servlet>
-    <servlet-name>xyz</servlet-name>
-    <servlet-class>com.dembla.servlet.ContextParamUse</servlet-class>
-
-    <init-param>
-      <param-name>name</param-name>
-      <param-value>MayankDembla</param-value>
-    </init-param>
-
-  </servlet>
-
-  <servlet-mapping>
-    <servlet-name>xyz</servlet-name>
-    <url-pattern>/ctx</url-pattern>
-  </servlet-mapping>
-
   <context-param>
     <param-name>firstname</param-name>
     <param-value>Mayank</param-value>

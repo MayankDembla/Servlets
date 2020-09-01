@@ -1,9 +1,11 @@
 package com.dembla.servlet;
 
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
 import java.io.IOException;
 
+@WebServlet("/sq")
 public class SquareServlet extends HttpServlet {
 
     @Override
