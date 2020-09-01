@@ -4,6 +4,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
 public class SquareServlet extends HttpServlet {
@@ -15,7 +16,15 @@ public class SquareServlet extends HttpServlet {
 //        int k = (int) req.getAttribute("key") ;
 
         // in case of Redirect
-        int k = Integer.parseInt(req.getParameter("key"))  ;
+//        int k = Integer.parseInt(req.getParameter("key"))  ;
+
+        // Fetch Attribute using Session
+        HttpSession session = req.getSession() ;
+
+        int k = (int) session.getAttribute("key");
+
+        session.removeAttribute("key");
+
 
         resp.getWriter().println("Calculating the Square .. " + k ) ;
     }

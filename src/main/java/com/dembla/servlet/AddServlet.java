@@ -5,6 +5,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.PrintWriter;
 
@@ -28,8 +29,14 @@ public class AddServlet extends HttpServlet {
 //        RequestDispatcher rd = req.getRequestDispatcher("sq") ;
 //        rd.forward(req,res);
 
+
+        // Lets implement the Session
+        HttpSession session = req.getSession() ;
+
+        session.setAttribute("Key", k );
+
         // Lets use the Another concept of Redirecting
-        res.sendRedirect("sq?key="+ k ); // URL Rewriting
+        res.sendRedirect("sq" ); // URL Rewriting
 
 
     }
