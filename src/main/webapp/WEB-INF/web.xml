@@ -4,4 +4,16 @@
 
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
+
+  <servlet>
+    <servlet-name>abc</servlet-name>
+    <servlet-class>com.dembla.servlet.AddServlet</servlet-class>
+    <load-on-startup>2</load-on-startup>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>abc</servlet-name>
+    <url-pattern>/add</url-pattern>
+  </servlet-mapping>
+
 </web-app>
