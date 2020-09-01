@@ -20,12 +20,17 @@ public class AddServlet extends HttpServlet {
         int k = i*j;
 
         // Now we also want to pass some data to the another Servlet
-        req.setAttribute("key",k);
+//        req.setAttribute("key",k);
 
 
         // Here is the one thing using the Request Dispatcher we are just passing the control
         // to the another servlet
-        RequestDispatcher rd = req.getRequestDispatcher("sq") ;
-        rd.forward(req,res);
+//        RequestDispatcher rd = req.getRequestDispatcher("sq") ;
+//        rd.forward(req,res);
+
+        // Lets use the Another concept of Redirecting
+        res.sendRedirect("sq?key="+ k ); // URL Rewriting
+
+
     }
 }

@@ -12,8 +12,10 @@ public class SquareServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
         // fetch the K value to here.
-        int k = (int) req.getAttribute("key") ;
+//        int k = (int) req.getAttribute("key") ;
 
+        // in case of Redirect
+        int k = Integer.parseInt(req.getParameter("key"))  ;
 
         resp.getWriter().println("Calculating the Square .. " + k ) ;
     }
