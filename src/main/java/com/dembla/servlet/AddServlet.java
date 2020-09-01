@@ -2,10 +2,7 @@ package com.dembla.servlet;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
+import javax.servlet.http.*;
 import java.io.IOException;
 import java.io.PrintWriter;
 
@@ -31,9 +28,10 @@ public class AddServlet extends HttpServlet {
 
 
         // Lets implement the Session
-        HttpSession session = req.getSession() ;
+//        HttpSession session = req.getSession() ;
+//        session.setAttribute("Key", k );
 
-        session.setAttribute("Key", k );
+        Cookie cookie = new Cookie("k", k + "" ) ;
 
         // Lets use the Another concept of Redirecting
         res.sendRedirect("sq" ); // URL Rewriting

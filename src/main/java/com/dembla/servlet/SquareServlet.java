@@ -1,10 +1,7 @@
 package com.dembla.servlet;
 
 import javax.servlet.ServletException;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
+import javax.servlet.http.*;
 import java.io.IOException;
 
 public class SquareServlet extends HttpServlet {
@@ -19,13 +16,20 @@ public class SquareServlet extends HttpServlet {
 //        int k = Integer.parseInt(req.getParameter("key"))  ;
 
         // Fetch Attribute using Session
-        HttpSession session = req.getSession() ;
+//        HttpSession session = req.getSession() ;
+//        int k = (int) session.getAttribute("key");
+//        session.removeAttribute("key");
 
-        int k = (int) session.getAttribute("key");
+        // Use Cookies - send by the client/browser
+        Cookie[] cookies = req.getCookies();
+        int k = 0;
+        for (Cookie c : cookies) {
+            if (c.getName().equalsIgnoreCase("k")) {
+                k = Integer.parseInt(c.getValue()) ;
+            }
+        }
 
-        session.removeAttribute("key");
 
-
-        resp.getWriter().println("Calculating the Square .. " + k ) ;
+        resp.getWriter().println("Calculating the Square .. " + k);
     }
 }
