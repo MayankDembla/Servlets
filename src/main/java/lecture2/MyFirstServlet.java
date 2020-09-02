@@ -1,6 +1,7 @@
 package lecture2;
 
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebFilter;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
